@@ -1,0 +1,18 @@
+[user]
+    name = Piotr Pierzak
+    email = piotr.pierzak@hatimeria.pl
+[core]
+    excludesfile = /Users/pierzakp/.gitignore
+	editor = vim
+[alias]
+    ci  = commit
+    cm  = commit -m
+    cma = commit --amend
+    s   = status -sb
+    st  = status
+    ls  = log -n 1 --format=%H
+    aa  = add --all
+[color]
+    ui = auto
+[hub]
+    protocol = https
