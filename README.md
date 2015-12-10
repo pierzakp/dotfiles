@@ -1,4 +1,4 @@
-# vim config
+# Dotfiles
 
 ## Installation
 
