@@ -57,7 +57,7 @@
 
     " A Vim plugin which shows a git diff in the gutter (sign column) and
     " stages/reverts hunks.
-    Plugin 'airblade/vim-gitgutter'
+    " Plugin 'airblade/vim-gitgutter'
 
     " Light and configurable statusline/tabline for Vim.
     Plugin 'itchyny/lightline.vim'
@@ -68,6 +68,13 @@
 
     " Provides automatic closing of quotes, parenthesis, brackets.
     Plugin 'Raimondi/delimitMate'
+
+    " Elegant buffer explorer.
+    Plugin 'fholgado/minibufexpl.vim'
+
+    " Multi-language DBGP debugger client for Vim (PHP, Python, Perl, Ruby,
+    " etc.).
+    Bundle 'joonty/vdebug.git'
 
     " All of the plugins should be added before the following line.
     call vundle#end()
@@ -129,6 +136,7 @@
 
 " Search
     set hlsearch " Highlight matches.
+    hi Search ctermbg=226 ctermfg=238 " Set different background and foregound for search.
 
 " Indentation
     set autoindent " Automatic indentation.
@@ -160,8 +168,8 @@
     let g:NERDTreeWinSize = 50
     nnoremap <leader>t :NERDTreeToggle<CR>
     nnoremap <leader>o :NERDTreeFind<CR>
-    let Tlist_Use_Right_Window = 1
-    let Tlist_WinWidth = 60
+    let g:Tlist_Use_Right_Window = 1
+    let g:Tlist_WinWidth = 60
     nnoremap <leader>v :TlistToggle<CR>
 
 " Tabular mapping
@@ -181,12 +189,15 @@
     let g:syntastic_check_on_wq = 0
 
 " Highlight column 80 + column 120 & after
-    highlight OverLength ctermbg=red ctermfg=white guibg=#592929
-    match OverLength /\%81v.\+/
+    highlight OverLength80 ctermbg=23 ctermfg=white guibg=#008888
+    match OverLength80 /\%81v.\+/
+
+    highlight OverLength120 ctermbg=red ctermfg=white guibg=#592929
+    2match OverLength120 /\%121v.\+/
 
 " Git gutter
-    :nmap ]h <Plug>GitGutterNextHunk
-    :nmap [h <Plug>GitGutterPrevHunk
+    " :nmap ]h <Plug>GitGutterNextHunk
+    " :nmap [h <Plug>GitGutterPrevHunk
 
 " Lightline
     let g:lightline = {
@@ -250,3 +261,23 @@
         return winwidth(0) > 60 ? lightline#mode() : ''
     endfunction
 
+" MiniBufXplorer settings
+    let g:miniBufExplMaxSize=3 " Set max size to 3 lines.
+    let g:miniBufExplMapWindowNavVim= 1 " Navigate trough buffers with Control + [hjkl].
+    let g:miniBufExplMapWindowNavArrows=1 " Navigate trough buffers with Control + Arrow Keys.
+    let g:miniBufExplMapCTabSwitchBufs=1 " Navigate trough buffers with <C-TAB> and <C-S-TAB>.
+    let g:miniBufExplModSelTarget=1 " Hide others explorers out of MBE.
+    let g:miniBufExplSplitBelow=0 " Put new window above current or on the left for vertical split.
+    " Minibufexpl with ,q is better than :Bclose :)
+    noremap <leader>q :Bclose<CR>
+    " Add mapping to navigate
+    noremap <C-Down>  <C-W>j
+    noremap <C-Up>    <C-W>k
+    noremap <C-Left>  <C-W>h
+    noremap <C-Right> <C-W>l
+    noremap <C-TAB>   :MBEbn<CR>
+    noremap <C-S-TAB> :MBEbp<CR>
+
+" Insert new line and get back to normal mode.
+    nmap <S-Enter> O<Esc>
+    nmap <CR> o<Esc>
