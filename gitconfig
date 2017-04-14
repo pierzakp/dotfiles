@@ -7,6 +7,7 @@
 [alias]
     ci      = commit
     cm      = commit -m
+    cmn     = commit -n -m
     cma     = commit --amend
     s       = status -sb
     st      = status
