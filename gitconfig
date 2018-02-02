@@ -1,5 +1,5 @@
 [user]
-    name = Piotr Pierzak
+	name = pierzakp
     email = piotrek.pierzak@gmail.com
 [core]
     excludesfile = /Users/pierzakp/.gitignore
@@ -17,6 +17,7 @@
     dnp     = !git --no-pager diff
     ds      = diff --staged
     dsnp    = !git --no-pager diff --staged
+    kraken  = !"/Applications/GitKraken.app/Contents/MacOS/GitKraken -p $(pwd)"
 [color]
     ui = auto
 [hub]
