@@ -133,6 +133,7 @@
     set noerrorbells " No beeping.
     set nobackup " No backup file!
     set noswapfile " No more swap file!
+    set mouse-=a
 
 " Search
     set hlsearch " Highlight matches.
