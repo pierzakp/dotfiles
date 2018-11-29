@@ -12,7 +12,7 @@ ln -s ~/src/dotfiles/vim ~/.vim
 ln -s ~/src/dotfiles/gitconfig ~/.gitconfig
 ln -s ~/src/dotfiles/gitignore ~/.gitignore
 ln -s ~/src/dotfiles/tmux.conf ~/.tmux.conf
-lns -s ~/src/dotfiles/zshrc_aliases ~/.zshrc_aliases
+ln -s ~/src/dotfiles/zshrc_aliases ~/.zshrc_aliases
 git clone git@github.com:gmarik/Vundle.vim.git ~/.vim/bundle/vundle
 vim +PluginInstall +qall
 ```
