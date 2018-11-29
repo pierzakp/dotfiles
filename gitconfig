@@ -1,9 +1,13 @@
 [user]
 	name = pierzakp
-    email = piotrek.pierzak@gmail.com
+	email = piotrek.pierzak@gmail.com
 [core]
     excludesfile = /Users/pierzakp/.gitignore
 	editor = vim
+[merge]
+    conflictstyle = diff3
+[diff]
+    patience = true
 [alias]
     ci      = commit
     cm      = commit -m
@@ -17,8 +21,14 @@
     dnp     = !git --no-pager diff
     ds      = diff --staged
     dsnp    = !git --no-pager diff --staged
+    gl      = log --oneline --decorate --graph --all
     kraken  = !"/Applications/GitKraken.app/Contents/MacOS/GitKraken -p $(pwd)"
 [color]
     ui = auto
 [hub]
     protocol = https
+[filter "lfs"]
+	required = true
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
