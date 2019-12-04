@@ -1,5 +1,3 @@
-alias please="sudo"
-alias mage="bin/magento"
 alias mvim="mvim -v"
 alias composer="php /usr/local/bin/composer.phar"
 alias findconflicts="find . -name \"*copy: conflict*\" -print"
